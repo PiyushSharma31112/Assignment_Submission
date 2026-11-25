@@ -82,6 +82,23 @@ JSON errors use `{ "message": "..." }`. Uploads accept PDF, DOC, DOCX, TXT, JPG,
 ## Scripts
 
 - `frontend`: `npm run dev`, `npm run build`, `npm run preview`
-- `backend`: `npm run dev`, `npm start`, `npm run check`
+- `backend`: `npm run dev`, `npm start`, `npm run seed`, `npm run check`
+
+## Demo data
+
+To add example users and assignments to MongoDB, run:
+
+```bash
+cd backend
+npm run seed
+```
+
+This creates one teacher and two student accounts, plus three example assignments. The accounts use `Password123` as their password:
+
+- Teacher: `teacher@example.com`
+- Student: `aarav@example.com`
+- Student: `meera@example.com`
+
+The seed command is idempotent; rerunning it updates the demo users and avoids duplicate assignments.
 
 To deploy, configure HTTPS, a production MongoDB URI, a strong private JWT secret, and the deployed frontend origin. For multi-instance deployments, replace local upload storage with a private object-storage service.

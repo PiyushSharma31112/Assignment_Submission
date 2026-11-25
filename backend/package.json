@@ -6,7 +6,8 @@
   "scripts": {
     "start": "node server.js",
     "dev": "node --watch server.js",
-    "check": "node --check app.js && node --check server.js"
+    "seed": "node seed.js",
+    "check": "node --check app.js && node --check server.js && node --check seed.js"
   },
   "dependencies": {
     "bcryptjs": "^2.4.3",
